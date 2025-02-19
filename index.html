@@ -68,7 +68,11 @@ updateThemeIcon();
 
                 const response = await fetch(checklistUrl);
                 if (!response.ok) throw new Error("Fetch failed");
+
                 const text = await response.text();
+
+                console.log("Text", text); // 🔍 Debugging
+
                 generateContent(text);
             } catch (error) {
                 console.warn("Using fallback checklist due to fetch error:", error);
